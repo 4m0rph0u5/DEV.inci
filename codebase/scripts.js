@@ -46,6 +46,7 @@ const mission = document.querySelector('.mission');
 const foregroundTop = document.querySelector('.l3-foreground-top');
 const foregroundBottom = document.querySelector('.l3-foreground-bottom');
 const l3BackgroundCenter = document.querySelector('.l3-background-center');
+const showCaseTitle = document.querySelector('.showcase-title');
 
 const handleIntroAnimation = (e) => {
   cornerLogo.classList.add('corner-logo-transition');
@@ -70,7 +71,6 @@ const handleAnimations = (e) => {
       break;
     case layer1Part2.classList.contains('active-layer'):
       layer1Part2Animation(e);
-      loadLayer2Content(e);
       break;
     case layer2.classList.contains('active-layer'):
       layer2Animation(e);
@@ -132,6 +132,9 @@ const layer1Part2Animation = (e) => {
   } else if (delta < 0 && layer1Part2.classList.contains('active-layer')) {
     // L1P2 TRANSITION
     console.log('l1p2 animation initiated');
+
+    loadLayer2Content();
+
     // change arrowup color to orange
     arrowup.style.backgroundImage = 'url(../../design/images/arrowup.png)';
     // open transition
@@ -198,6 +201,8 @@ const layer2Animation = (e) => {
     //Perhaps this already activates only if l2 is active
     console.log(`initiate l2 animation`);
 
+    showCaseTitle.classList.add('show-showcase-title');
+
     arrowup.style.backgroundImage =
       'url(../../design/images/arrowup-orange.png)';
     // center circle split
@@ -256,6 +261,9 @@ const layer3Animation = (e) => {
     console.log(`l2 reverse animation initiated, delta: ${delta}`);
     // L2 REVERSE TRANSITION
 
+    showCaseTitle.classList.remove('show-showcase-title');
+    showCaseTitle.classList.add('hide-showcase-title');
+
     loadLayer2Content();
 
     layer3.classList.remove('active-layer');
@@ -303,6 +311,8 @@ const layer3Animation = (e) => {
     );
   } else if (delta < 0 && layer3.classList.contains('active-layer')) {
     console.log(`l3 animation initiated, delta: ${delta}`);
+    showCaseTitle.classList.remove('show-showcase-title');
+    showCaseTitle.classList.add('hide-showcase-title');
     foregroundTop.classList.add('l3-foreground-top-transition');
     foregroundBottom.classList.add('l3-foreground-bottom-transition');
     l3BackgroundCenter.classList.add('l3-background-center-transition');
@@ -319,6 +329,10 @@ const layer3Part2Animation = (e) => {
 
 const l3ReverseAnimation = () => {
   console.log(`l3 reverse animation initiated`);
+
+  showCaseTitle.classList.add('show-showcase-title');
+  showCaseTitle.classList.remove('hide-showcase-title');
+
   layer3.classList.add('active-layer');
   foregroundTop.classList.replace(
     'l3-foreground-top-transition',
@@ -400,6 +414,7 @@ function arrangeInCircle(radius, elements) {
 const radius = 265; // Adjust the radius as needed
 const elements = document.getElementsByClassName('circle-element');
 arrangeInCircle(radius, elements);
+// inner and outer elements
 
 // Enforce a delay between animations
 let lastScrollTime = 0;

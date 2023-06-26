@@ -747,7 +747,6 @@ body {
   width: 0;
   height: 110px;
   opacity: 0;
-  padding: 10px;
   color: #ff8000;
   background-color: rgb(22, 22, 22);
   padding: 15px;
@@ -759,7 +758,7 @@ body {
 .mission-transition-show {
   width: 420px;
   opacity: 1;
-  left: 35.5vw;
+  left: 34.6vw;
   transition: all;
   transition-duration: 0.9s;
   transition-delay: 1.7s;
@@ -801,6 +800,40 @@ body {
 }
 
 /* LAYER 3 */
+
+.showcase-title {
+  z-index: 600;
+  position: absolute;
+  padding: 8px;
+  color: #ff8000;
+  background-color: rgb(22, 22, 22);
+  border-radius: 10px;
+  top: 32vh;
+  left: 50vw;
+  font-size: 1.5rem;
+  opacity: 0;
+  width: 0;
+  height: 46px;
+}
+
+.show-showcase-title {
+  opacity: 1;
+  width: 230px;
+  left: 41.5vw;
+  transition: all;
+  transition-duration: 0.7s;
+  transition-timing-function: ease-in;
+  transition-delay: 0.8s;
+}
+
+.hide-showcase-title {
+  transition-duration: 0.8s;
+}
+
+.show-showcase-title::after {
+  content: '';
+  display: block;
+}
 
 .l3-foreground-top {
   z-index: 600;
@@ -879,7 +912,7 @@ body {
 
 .l3-background-center-transition {
   transform: scale(1);
-  transition: all;
+  transition: transform;
   transition-duration: 2.5s;
   transition-timing-function: ease;
   transition-delay: 0.9s;
