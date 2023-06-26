@@ -1,0 +1,2 @@
+Montserrat medium 500 for the heading
+Regular 400 Italic for anything else

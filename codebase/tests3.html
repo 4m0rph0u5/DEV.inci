@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    /* icon transitions */
+
+    /* show transition */
+
+    /* .tech-icon-show {
+      transition: opacity;
+      opacity: 1;
+      transition-duration: 0.8s;
+      border: 1px solid blue;
+    } */
+
+    .mission {
+      position: absolute;
+      /* width: 420px; */
+      height: 110px;
+      width: 0;
+      overflow: hidden;
+      padding: 10px;
+      border: 1px solid red;
+      border-radius: 10px;
+      top: 39vh;
+      left: 50vw;
+      opacity: 0;
+    }
+
+    .mission-transition-1 {
+      /* border: 5px solid blue; */
+      /* color: green; */
+      width: 420px;
+      opacity: 1;
+      left: 35.5vw;
+      transition: all;
+      transition-duration: 1s;
+      transition-delay: 1s;
+    }
+
+    #container {
+      position: absolute;
+      width: 550px;
+      height: 500px;
+      left: 28vw;
+      top: 8vh;
+      /* border: 1px solid red; */
+    }
+
+    .circle-element {
+      position: absolute;
+      text-align: center;
+      border: 1px solid red;
+      background-position: center;
+      background-size: contain;
+      padding: 5px;
+      border-radius: 5px;
+      font-size: 0.9rem;
+      opacity: 0;
+    }
+
+    .circle-element-transition {
+      opacity: 1;
+      transition: all;
+      transition-duration: 1s;
+    }
+  </style>
+  <body>
+    <div class="mission">
+      <p>
+        Using a large variety of frontend, backend, web3 and AI technologies, I
+        quickly create various, unique and customized functions, programs and
+        interfaces with the intention of providing the best possible service as
+        quickly as possible without compromising the quality of the product.
+      </p>
+    </div>
+    <div class="tech-icons">
+      <div class="icon-wrapper" id="container">
+        <div class="circle-element tech-icon tech-icon-1"><p>AI</p></div>
+        <div class="circle-element tech-icon tech-icon-2"><p>PYTHON</p></div>
+        <div class="circle-element tech-icon tech-icon-3"><p>WEB3</p></div>
+        <div class="circle-element tech-icon tech-icon-4"><p>PHP</p></div>
+        <div class="circle-element tech-icon tech-icon-5"><p>NODE</p></div>
+        <div class="circle-element tech-icon tech-icon-6"><p>JS</p></div>
+        <div class="circle-element tech-icon tech-icon-7"><p>VITE</p></div>
+        <div class="circle-element tech-icon tech-icon-8"><p>REACT</p></div>
+        <div class="circle-element tech-icon tech-icon-9"><p>FIGMA</p></div>
+        <div class="circle-element tech-icon tech-icon-10"><p>GIMP</p></div>
+        <div class="circle-element tech-icon tech-icon-11"><p>CSS3</p></div>
+        <div class="circle-element tech-icon tech-icon-12"><p>HTML5</p></div>
+        <div class="circle-element tech-icon tech-icon-13"><p>MySQL</p></div>
+        <div class="circle-element tech-icon tech-icon-14"><p>MongoDB</p></div>
+      </div>
+    </div>
+    <script>
+      const techIcons = document.querySelectorAll('.tech-icon');
+      const mission = document.querySelector('.mission');
+
+      window.addEventListener('load', () => {
+        techIcons.forEach((icon, i) => {
+          icon.classList.add('circle-element-transition');
+          icon.style.cssText += `transition-delay: ${i * 0.1 + 2}s`;
+        });
+
+        mission.classList.add('mission-transition-1');
+      });
+
+      function arrangeInCircle(radius, elements) {
+        const container = document.getElementById('container');
+        const angle = (2 * Math.PI) / elements.length; // Calculate the angle between each element
+        const containerWidth = container.offsetWidth;
+        const containerHeight = container.offsetHeight;
+        const centerX = containerWidth / 2;
+        const centerY = containerHeight / 2;
+
+        for (let i = 0; i < elements.length; i++) {
+          const element = elements[i];
+          const angleOffset = angle * i;
+          const x = Math.cos(angleOffset) * radius + centerX;
+          const y = Math.sin(angleOffset) * radius + centerY;
+
+          element.style.left = x + 'px';
+          element.style.top = y + 'px';
+        }
+      }
+
+      const radius = 265; // Adjust the radius as needed
+      const elements = document.getElementsByClassName('circle-element');
+      arrangeInCircle(radius, elements);
+    </script>
+  </body>
+</html>

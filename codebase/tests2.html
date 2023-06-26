@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    #container {
+      position: absolute;
+      /* Adjust the width and height as needed */
+      width: 550px;
+      height: 500px;
+      /* left: 50vw; */
+      /* border: 1px solid blue; */
+    }
+
+    .circle-element {
+      position: absolute;
+      width: 50px; /* Adjust the width and height of the elements as needed */
+      height: 50px;
+      background-color: #6d1414; /* Adjust the background color as needed */
+      border-radius: 50%; /* Make the elements circular */
+      text-align: center; /* Center the content within the elements */
+      line-height: 50px; /* Vertically center the content */
+    }
+  </style>
+  <body>
+    <div id="container">
+      <div class="circle-element div1"></div>
+      <div class="circle-element div2"></div>
+      <div class="circle-element div3"></div>
+      <div class="circle-element div4"></div>
+      <div class="circle-element div5"></div>
+      <div class="circle-element div1"></div>
+      <div class="circle-element div2"></div>
+      <div class="circle-element div3"></div>
+      <div class="circle-element div4"></div>
+      <div class="circle-element div5"></div>
+      <div class="circle-element div2"></div>
+      <div class="circle-element div3"></div>
+      <div class="circle-element div4"></div>
+      <div class="circle-element div5"></div>
+    </div>
+
+    <script>
+      function arrangeInCircle(radius, elements) {
+        const container = document.getElementById('container');
+        const angle = (2 * Math.PI) / elements.length; // Calculate the angle between each element
+        const containerWidth = container.offsetWidth;
+        const containerHeight = container.offsetHeight;
+        const centerX = containerWidth / 2;
+        const centerY = containerHeight / 2;
+
+        for (let i = 0; i < elements.length; i++) {
+          const element = elements[i];
+          const angleOffset = angle * i;
+          const x = Math.cos(angleOffset) * radius + centerX;
+          const y = Math.sin(angleOffset) * radius + centerY;
+
+          element.style.left = x + 'px';
+          element.style.top = y + 'px';
+        }
+      }
+
+      const radius = 230; // Adjust the radius as needed
+      const elements = document.getElementsByClassName('circle-element');
+      arrangeInCircle(radius, elements);
+    </script>
+  </body>
+</html>
