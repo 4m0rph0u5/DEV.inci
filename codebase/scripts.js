@@ -48,16 +48,17 @@ const foregroundBottom = document.querySelector('.l3-foreground-bottom');
 const l3BackgroundCenter = document.querySelector('.l3-background-center');
 const showCaseTitle = document.querySelector('.showcase-title');
 
+// Form elements
+
+const formHeader = document.querySelector('.form-header');
+const nameElements = document.querySelectorAll('.name-element');
+const emailElements = document.querySelectorAll('.email-element');
+const subjectElements = document.querySelectorAll('.subject-element');
+const subjectInput = document.querySelector('.form-input-subject');
+const submitBtn = document.querySelector('.submit-btn');
+
 const handleIntroAnimation = (e) => {
   cornerLogo.classList.add('corner-logo-transition');
-
-  // blur l1 elements except for the logo and unblur as the logo dissapears
-  l1Elements.forEach((l1Element) => {
-    // l1Element.classList.add('l1-element-unblur');
-  });
-  // l1Elements.forEach((l1Element) => {
-  //   l1Element.classList.remove('l1-element-unblur');
-  // });
 };
 
 window.addEventListener('load', handleIntroAnimation);
@@ -318,6 +319,7 @@ const layer3Animation = (e) => {
     l3BackgroundCenter.classList.add('l3-background-center-transition');
     layer3Part2.classList.add('active-layer');
     layer3.classList.remove('active-layer');
+    showForm();
   }
 };
 
@@ -415,6 +417,60 @@ const radius = 265; // Adjust the radius as needed
 const elements = document.getElementsByClassName('circle-element');
 arrangeInCircle(radius, elements);
 // inner and outer elements
+
+// CONTACT FORM FUNCTIONALITY
+
+const showForm = () => {
+  formHeader.classList.remove('hide-form-header');
+  formHeader.classList.add('form-header-transition');
+  formHeader.style.cssText -= 'transition-delay: 0.8s';
+
+  nameElements.forEach((element) => {
+    element.classList.remove('hide-name-element');
+    element.classList.add('name-element-transition');
+    element.style.cssText -= 'transition-delay: 0.5s';
+  });
+
+  emailElements.forEach((element) => {
+    element.classList.remove('hide-email-element');
+    element.classList.add('email-element-transition');
+    element.style.cssText -= 'transition-delay: 0.3s';
+  });
+
+  subjectElements.forEach((element) => {
+    element.classList.remove('hide-subject-element');
+    element.classList.add('subject-element-transition');
+    element.style.cssText -= 'transition-delay: 0.1s';
+  });
+
+  subjectInput.style.cssText += 'height: 200px';
+};
+
+const hideForm = () => {
+  formHeader.classList.add('hide-form-header');
+  formHeader.classList.remove('form-header-transition');
+  formHeader.style.cssText += 'transition-delay: 0.8s';
+
+  nameElements.forEach((element) => {
+    element.classList.replace('name-element-transition', 'hide-name-element');
+    element.style.cssText += 'transition-delay: 0.5s';
+  });
+
+  emailElements.forEach((element) => {
+    element.classList.replace('email-element-transition', 'hide-email-element');
+    element.style.cssText += 'transition-delay: 0.3s';
+  });
+
+  subjectElements.forEach((element) => {
+    element.classList.replace(
+      'subject-element-transition',
+      'hide-subject-element'
+    );
+    element.style.cssText += 'transition-delay: 0.1s';
+  });
+
+  subjectInput.style.cssText += 'height: 200px';
+};
 
 // Enforce a delay between animations
 let lastScrollTime = 0;

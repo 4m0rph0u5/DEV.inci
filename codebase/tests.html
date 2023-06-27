@@ -13,433 +13,276 @@
       box-sizing: border-box;
     }
 
-    .line {
-      height: 100vh;
+    .form-header {
       position: absolute;
-      background-color: black;
-      width: 1px;
-      left: 50%;
-    }
-
-    .tech-icon {
-      z-index: 1200;
-      height: 50px;
-      width: 50px;
-      border: 2px solid rgb(255, 116, 3);
-      position: absolute;
-      background-size: contain;
-      background-repeat: no-repeat;
-      border-radius: 5px;
+      z-index: 550;
+      color: #ff6f22;
+      top: 3vh;
+      /* left: 44vw; */
+      left: 50vw;
       opacity: 0;
+      width: 0;
+      background-color: rgb(22, 22, 22);
+      border: 1px solid #da6222;
+      border-radius: 7px;
+      padding: 7px;
+      font-size: 0.9rem;
+      height: 42px;
+      line-height: 27px;
+      overflow: hidden;
     }
 
-    /* icon transitions */
-
-    /* show transition */
-
-    .tech-icon-overall-show-transition {
-      transition: opacity;
+    .form-header-transition {
+      left: 44vw;
+      width: 165px;
       opacity: 1;
-      transition-duration: 0.8s;
+      transition: all;
+      transition-duration: 0.35s;
+      transition-timing-function: ease-in;
+    }
+
+    .hide-form-header {
+      transition-duration: 0.5s;
+    }
+
+    /* .form-container {
+      position: absolute;
+      top: 12vh;
+      left: calc(50vw - 250px);
+      z-index: 550;
+      width: 500px;
+      height: 540px;
+      margin: 0 auto;
       border: 1px solid blue;
-    }
-
-    .tech-icon-13-show-transition,
-    .tech-icon-14-show-transition {
-      border-color: red;
-    }
-
-    .tech-icon-9-show-transition,
-    .tech-icon-10-show-transition,
-    .tech-icon-11-show-transition,
-    .tech-icon-12-show-transition {
-      transition-delay: 0.3s;
-      border-color: red;
-    }
-
-    .tech-icon-3-show-transition,
-    .tech-icon-4-show-transition,
-    .tech-icon-7-show-transition,
-    .tech-icon-8-show-transition {
-      transition-delay: 0.5s;
-      border-color: red;
-    }
-
-    .tech-icon-1-show-transition,
-    .tech-icon-2-show-transition,
-    .tech-icon-5-show-transition,
-    .tech-icon-6-show-transition {
-      transition-delay: 0.7s;
-      border-color: red;
-    }
-
-    /* hide transition */
-
-    .tech-icon-overall-hide-transition {
-      transition: opacity;
-      opacity: 0;
-      transition-duration: 0.8s;
-      border: 1px solid blue;
-    }
-
-    .tech-icon-13-hide-transition,
-    .tech-icon-14-hide-transition {
-      border-color: red;
-      transition-delay: 0.7s;
-    }
-
-    .tech-icon-9-hide-transition,
-    .tech-icon-10-hide-transition,
-    .tech-icon-11-hide-transition,
-    .tech-icon-12-hide-transition {
-      transition-delay: 0.5s;
-      border-color: red;
-    }
-
-    .tech-icon-3-hide-transition,
-    .tech-icon-4-hide-transition,
-    .tech-icon-7-hide-transition,
-    .tech-icon-8-hide-transition {
-      transition-delay: 0.3s;
-      border-color: red;
-    }
-
-    .tech-icon-1-hide-transition,
-    .tech-icon-2-hide-transition,
-    .tech-icon-5-hide-transition,
-    .tech-icon-6-hide-transition {
-      /* transition-delay: 0.3s; */
-      border-color: red;
-    }
-
-    /* laptop icon positions */
-
-    /* .tech-icon-1,
-    .tech-icon-2 {
-      top: 17vh;
-    }
-
-    .tech-icon-3,
-    .tech-icon-8,
-    .tech-icon-9,
-    .tech-icon-11 {
-      top: 35vh;
-    }
-
-    .tech-icon-10,
-    .tech-icon-12 {
-      bottom: 36vh;
-    }
-
-    .tech-icon-3,
-    .tech-icon-8 {
-      top: 31vh;
-    }
-
-    .tech-icon-4,
-    .tech-icon-7 {
-      bottom: 31vh;
-    }
-
-    .tech-icon-5,
-    .tech-icon-6 {
-      bottom: 17vh;
-    }
-
-    .tech-icon-1,
-    .tech-icon-6 {
-      right: 40vw;
-    }
-
-    .tech-icon-2,
-    .tech-icon-5 {
-      left: 40vw;
-    }
-
-    .tech-icon-3,
-    .tech-icon-4 {
-      left: calc(32vw - 2.5vw);
-    }
-
-    .tech-icon-7,
-    .tech-icon-8 {
-      right: calc(32vw - 2.5vw);
-    }
-
-    .tech-icon-9,
-    .tech-icon-10 {
-      right: calc(20vw - 2.5vw);
-    }
-
-    .tech-icon-11,
-    .tech-icon-12 {
-      left: calc(20vw - 2.5vw);
-    }
-
-    .tech-icon-13,
-    .tech-icon-14 {
-      top: 45vh;
-    }
-
-    .tech-icon-13 {
-      left: calc(9vw - 2vw);
-      background-position: center;
-      background-size: 80%;
-    }
-
-    .tech-icon-14 {
-      right: calc(9vw - 2vw);
-      width: 63px;
     } */
 
-    /* desktop icon positions */
-
-    .tech-icon-1,
-    .tech-icon-2 {
-      top: 20vh;
-    }
-
-    .tech-icon-3,
-    .tech-icon-8,
-    .tech-icon-9,
-    .tech-icon-11 {
-      top: 35vh;
-    }
-
-    .tech-icon-10,
-    .tech-icon-12 {
-      bottom: 36vh;
-    }
-
-    .tech-icon-3,
-    .tech-icon-8 {
-      top: 31vh;
-    }
-
-    .tech-icon-4,
-    .tech-icon-7 {
-      bottom: 31vh;
-    }
-
-    .tech-icon-5,
-    .tech-icon-6 {
-      bottom: 20vh;
-    }
-
-    .tech-icon-1,
-    .tech-icon-6 {
-      right: 40vw;
-    }
-
-    .tech-icon-2,
-    .tech-icon-5 {
-      left: 40vw;
-    }
-
-    .tech-icon-3,
-    .tech-icon-4 {
-      left: calc(32vw - 2.5vw);
-    }
-
-    .tech-icon-7,
-    .tech-icon-8 {
-      right: calc(32vw - 2.5vw);
-    }
-
-    .tech-icon-9,
-    .tech-icon-10 {
-      right: calc(20vw - 1.5vw);
-    }
-
-    .tech-icon-11,
-    .tech-icon-12 {
-      left: calc(20vw - 1.5vw);
-    }
-
-    .tech-icon-13,
-    .tech-icon-14 {
-      top: 45vh;
-    }
-
-    .tech-icon-13 {
-      left: 9vw;
-      background-position: center;
-      background-size: 80%;
-    }
-
-    .tech-icon-14 {
-      right: 9vw;
-      padding-left: 2px;
-    }
-
-    .tech-icon-1 {
-      background-image: url('../design/images/tech-stack-logos/icons/js2.png');
-    }
-
-    .tech-icon-2 {
-      background-image: url('../design/images/tech-stack-logos/icons/html5.png');
-    }
-
-    .tech-icon-3 {
-      background-image: url('../design/images/tech-stack-logos/icons/css.png');
-    }
-
-    .tech-icon-4 {
-      background-image: url('../design/images/tech-stack-logos/icons/react.png');
-    }
-
-    .tech-icon-5 {
-      background-image: url('../design/images/tech-stack-logos/icons/php.png');
-      background-position: center;
-      background-size: 90%;
-    }
-
-    .tech-icon-6 {
-      background-image: url('../design/images/tech-stack-logos/icons/nodejs.jpg');
-      background-size: 120%;
-      background-position: center;
-    }
-
-    .tech-icon-7 {
-      background-image: url('../design/images/tech-stack-logos/icons/databases2.png');
-    }
-
-    .tech-icon-8 {
-      background-image: url('../design/images/tech-stack-logos/icons/python2.png');
-    }
-
-    .tech-icon-9 {
-      background-image: url('../design/images/tech-stack-logos/icons/figma2.png');
-    }
-
-    .tech-icon-10 {
-      background-image: url('../design/images/tech-stack-logos/icons/sass.png');
-    }
-
-    .tech-icon-11 {
-      background-image: url('../design/images/tech-stack-logos/icons/wordpress.png');
-      background-size: 95%;
-      background-position: center;
-    }
-
-    .tech-icon-12 {
-      background-image: url('../design/images/tech-stack-logos/icons/vite.png');
-    }
-
-    .tech-icon-13 {
-      background-image: url('../design/images/tech-stack-logos/icons/solidity.png');
-    }
-
-    /* .tech-icon-14 {
-      background-image: url('../design/images/tech-stack-logos/icons/');
-    } */
-
-    .mission {
+    .contact-form {
+      margin: 0 auto;
+      margin-top: 14vh;
+      width: 30%;
       display: flex;
       flex-direction: column;
+      justify-content: center;
       align-items: center;
-      position: absolute;
-      height: 180px;
-      width: 430px;
-      padding: 10px;
-      border: 1px solid red;
-      border-radius: 10px;
-      top: 35vh;
-      left: 34.2vw;
     }
 
-    .tech-stack-btn {
-      margin-top: 30px;
-      height: 30px;
-      width: 90px;
-      font-size: 0.9rem;
+    .form-input {
+      margin-bottom: 30px;
+      height: 35px;
+      padding: 10px;
+      border-radius: 10px;
+      background-color: #c0571e;
+      border: 1px solid rgb(22, 22, 22);
+    }
+
+    ::placeholder {
+      /* Chrome, Firefox, Opera, Safari 10.1+ */
+      color: rgb(22, 22, 22);
+      font-size: 1rem;
+      opacity: 1; /* Firefox */
+    }
+
+    :-ms-input-placeholder {
+      /* Internet Explorer 10-11 */
+      color: rgb(22, 22, 22);
+      font-size: 1rem;
+    }
+
+    ::-ms-input-placeholder {
+      /* Microsoft Edge */
+      color: rgb(22, 22, 22);
+      font-size: 1rem;
+    }
+
+    .form-input-name,
+    .form-input-email,
+    .form-input-subject {
+      width: 60%;
+    }
+
+    label {
+      margin-bottom: 10px;
+      position: relative;
+      color: #ff6f1f;
+      background-color: rgb(22, 22, 22);
+      border-radius: 7px;
+      padding: 5px;
+      margin-bottom: 10px;
+    }
+
+    label[for='name'],
+    label[for='email'] {
+      left: -24%;
+    }
+
+    label[for='subject'] {
+      left: -23%;
+    }
+
+    .submit-btn {
+      position: relative;
+      left: 21%;
+      margin-bottom: 10px;
+      height: 40px;
+      width: 80px;
+      font-size: 1.1rem;
+      border: 1px solid #ff6f1f;
+      border-radius: 10px;
+      color: #ff7327;
+      background-color: rgb(22, 22, 22);
+      transition: 0.7s;
+    }
+
+    .submit-btn:hover {
+      border: 1px solid rgb(22, 22, 22);
+      background-color: #ff6f1f;
+      color: rgb(22, 22, 22);
+      cursor: pointer;
+    }
+
+    .name-element,
+    .email-element,
+    .subject-element {
+      opacity: 0;
+    }
+
+    /* FORM TRANSITION */
+
+    .name-element-transition {
+      opacity: 1;
+      transition: all;
+      transition-duration: 0.8s;
+      transition-delay: 0.3s;
+    }
+
+    
+    .email-element-transition {
+      opacity: 1;
+      transition: all;
+      transition-duration: 0.8s;
+      transition-delay: 0.5s;
+    }
+
+    .subject-element-transition {
+      opacity: 1;
+      transition: all;
+      transition-duration: 0.8s;
+      transition-delay: 0.7s;
+    }
+
+    .hide-name-element,
+    .hide-email-element,
+    .hide-subject-element {
+      opacity: 0;
+      transition: all;
+      transition-duration: 0.5s;
     }
   </style>
   <body>
-    <div class="mission">
-      <p>
-        Using a large variety of frontend, backend, web3 and AI technologies, I
-        quickly create various, unique and customized functions, programs and
-        interfaces with the intention of providing the best possible service as
-        quickly as possible without compromising the quality of the product.
-      </p>
-      <button class="tech-stack-btn">Tech Stack</button>
+
+    <div class="form-header"><h2>CONTACT ME</h2></div>
+      <form class="contact-form" action="">        
+
+        <label class="name-label name-element" for="name">Name</label>
+        <input
+          class="form-input form-input-name name-element"
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Name.."
+        />
+
+        <label class="email-label email-element" for="email">Email</label>
+        <input
+          class="form-input form-input-email email-element"
+          type="email??"
+          id="email"
+          name="email"
+          placeholder="Email.."
+        />
+
+        <label class="subject-label subject-element" for="subject">Subject</label>
+        <textarea
+          class="form-input form-input-subject subject-element"
+          id="subject"
+          name="subject"
+          placeholder="Write to me :]"
+          style="height: 200px"
+        ></textarea>
+
+        <!-- <input class="submit-btn" type="submit" value="Submit" /> -->        
+      </form>
+      <button class="submit-btn-show">show</button>
+      <button class="submit-btn-hide">hide</button>
+</div>
+
+      <script>
+        // const submitBtn = document.querySelector('.submit-btn');
+        const submitBtnShow = document.querySelector('.submit-btn-show');
+        const submitBtnHide = document.querySelector('.submit-btn-hide');
+        const nameElements = document.querySelectorAll('.name-element');
+        const emailElements = document.querySelectorAll('.email-element');
+        const subjectElements = document.querySelectorAll('.subject-element');
+        const subjectInput = document.querySelector('.form-input-subject');
+        const formHeader = document.querySelector('.form-header');
+
+        const showForm = () => {
+
+          formHeader.classList.remove('hide-form-header');
+          formHeader.classList.add('form-header-transition');
+          formHeader.style.cssText -= 'transition-delay: 0.8s'
+
+          nameElements.forEach((element) => {
+            element.classList.remove('hide-name-element');
+            element.classList.add('name-element-transition');
+            element.style.cssText -= 'transition-delay: 0.5s';
+
+          });
+
+          emailElements.forEach((element) => {
+            element.classList.remove('hide-email-element');
+            element.classList.add('email-element-transition');
+            element.style.cssText -= 'transition-delay: 0.3s';
+
+          });
+
+          subjectElements.forEach((element) => {
+            element.classList.remove('hide-subject-element');
+            element.classList.add('subject-element-transition');
+            element.style.cssText -= 'transition-delay: 0.1s';
+          });
+
+          subjectInput.style.cssText += 'height: 200px';
+        };
+
+        const hideForm = () => {
+
+          formHeader.classList.add('hide-form-header');
+          formHeader.classList.remove('form-header-transition');
+          formHeader.style.cssText += 'transition-delay: 0.8s'
+
+          nameElements.forEach((element) => {
+            element.classList.replace('name-element-transition', 'hide-name-element');
+            element.style.cssText += 'transition-delay: 0.5s';
+          });
+
+          emailElements.forEach((element) => {
+            element.classList.replace('email-element-transition', 'hide-email-element');
+            element.style.cssText += 'transition-delay: 0.3s';
+          });
+
+          subjectElements.forEach((element) => {
+            element.classList.replace('subject-element-transition', 'hide-subject-element');
+            element.style.cssText += 'transition-delay: 0.1s';
+          });
+
+          subjectInput.style.cssText += 'height: 200px';
+        };
+        // const showSubmitMsg = () => {};
+
+        submitBtnShow.addEventListener('click', showForm);
+        submitBtnHide.addEventListener('click', hideForm);
+      </script>
     </div>
-    <div class="line"></div>
-    <div class="tech-icons">
-      <div class="icon-wrapper">
-        <div class="tech-icon tech-icon-1">1</div>
-        <div class="tech-icon tech-icon-2">2</div>
-        <div class="tech-icon tech-icon-3">3</div>
-        <div class="tech-icon tech-icon-4">4</div>
-        <div class="tech-icon tech-icon-5">5</div>
-        <div class="tech-icon tech-icon-6">6</div>
-        <div class="tech-icon tech-icon-7">7</div>
-        <div class="tech-icon tech-icon-8">8</div>
-        <div class="tech-icon tech-icon-9">9</div>
-        <div class="tech-icon tech-icon-10">10</div>
-        <div class="tech-icon tech-icon-11">11</div>
-        <div class="tech-icon tech-icon-12">12</div>
-        <div class="tech-icon tech-icon-13">13</div>
-        <div class="tech-icon tech-icon-14">
-          14
-          <p>WEB3</p>
-        </div>
-      </div>
-    </div>
-    <script>
-      const icons = document.querySelectorAll('.tech-icon');
-
-      const icons_13_14 = document.getElementsByClassName('tech-icon-13');
-
-      const icons_9_10_11_12 = document.getElementsByClassName(
-        'tech-icon-9 tech-icon-10 tech-icon-11 tech-icon-12'
-      );
-
-      const icons_3_4_7_8 = document.getElementsByClassName(
-        'tech-icon-3 tech-icon-4 tech-icon-7 tech-icon-8'
-      );
-
-      const icons_1_2_5_6 = document.getElementsByClassName(
-        'tech-icon-1 tech-icon-2 tech-icon-5 tech-icon-6'
-      );
-
-      const techStackBtn = document.querySelector('.tech-stack-btn');
-
-      const showIcons = () => {
-        icons.forEach((icon, i) => {
-          icon.classList.remove(
-            'tech-icon-overall-hide-transition',
-            `tech-icon-${i + 1}-hide-transition`
-          );
-
-          icon.classList.add(
-            'tech-icon-overall-show-transition',
-            `tech-icon-${i + 1}-show-transition`
-          );
-        });
-      };
-
-      const hideIcons = () => {
-        icons.forEach((icon, i) => {
-          icon.classList.add(
-            'tech-icon-overall-hide-transition',
-            `tech-icon-${i + 1}-hide-transition`
-          );
-        });
-      };
-
-      techStackBtn.addEventListener('mouseover', showIcons);
-      techStackBtn.addEventListener('mouseout', hideIcons);
-
-      // window.addEventListener('load', () => {
-      //   icons.forEach((icon, i) => {
-      //     icon.classList.add(
-      //       'tech-icon-overall-transition',
-      //       `tech-icon-${i + 1}-transition`
-      //     );
-      //   });
-      // });
-    </script>
   </body>
 </html>
