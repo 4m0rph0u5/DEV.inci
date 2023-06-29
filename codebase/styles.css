@@ -781,6 +781,7 @@ body {
   width: 650px;
   height: 600px;
   left: 24.5vw;
+  overflow: visible;
 }
 
 .circle-element {
@@ -990,21 +991,28 @@ body {
 
 ::placeholder {
   /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: rgb(22, 22, 22);
+  /* color: rgb(22, 22, 22); */
   font-size: 1rem;
   opacity: 1; /* Firefox */
+  color: #ff6f1f;
 }
 
 :-ms-input-placeholder {
   /* Internet Explorer 10-11 */
-  color: rgb(22, 22, 22);
+  /* color: rgb(22, 22, 22); */
+  color: #ff6f1f;
   font-size: 1rem;
 }
 
 ::-ms-input-placeholder {
   /* Microsoft Edge */
-  color: rgb(22, 22, 22);
+  /* color: rgb(22, 22, 22); */
+  color: #ff6f1f;
   font-size: 1rem;
+}
+
+.form-input-subject::placeholder {
+  color: rgb(22, 22, 22);
 }
 
 .form-input-name,
@@ -1072,24 +1080,42 @@ label[for='subject'] {
 .submit-btn {
   position: relative;
   z-index: 750;
-  left: 14vw;
+  /* left: 14vw; */
+  left: 13.5vw;
   bottom: 11vh;
   margin-bottom: 10px;
   height: 40px;
-  width: 80px;
+  /* width: 80px; */
+  width: 0px;
   font-size: 1.1rem;
   border: 1px solid #ff6f1f;
-  border-radius: 7px;
   color: #ff7327;
   background-color: rgb(22, 22, 22);
-  transition: 0.7s;
+  border-radius: 7px;
+  transition-duration: 0.7s;
+  opacity: 0;
+  font-weight: 500;
 }
 
 .submit-btn:hover {
   border: 1px solid rgb(22, 22, 22);
-  background-color: #ff6f1f;
   color: rgb(22, 22, 22);
+  background-color: #ff6f1f;
   cursor: pointer;
+}
+
+.submit-btn-transition-show {
+  opacity: 1;
+  width: 80px;
+  left: 14vw;
+  transition: all;
+  /* transition-duration: 0.5s; */
+  transition-timing-function: ease;
+  /* transition-delay: 1.6s; */
+}
+
+.submit-btn-transition-hide {
+  transition-duration: 1s;
 }
 
 /* MOUSE ICON */

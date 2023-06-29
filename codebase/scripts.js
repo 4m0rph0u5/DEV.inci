@@ -332,6 +332,11 @@ const layer3Part2Animation = (e) => {
 const l3ReverseAnimation = () => {
   console.log(`l3 reverse animation initiated`);
 
+  hideForm();
+
+  submitBtn.classList.remove('submit-btn-transition-show');
+  submitBtn.classList.add('submit-btn-transition-hide');
+
   showCaseTitle.classList.add('show-showcase-title');
   showCaseTitle.classList.remove('hide-showcase-title');
 
@@ -389,6 +394,9 @@ const returnToFrontAnimation = () => {
     'l2-right-part-transition',
     'l2-right-part-reverse-transition'
   );
+
+  hideForm();
+
   setTimeout(() => window.location.reload(), 1300);
 };
 
@@ -413,10 +421,9 @@ function arrangeInCircle(radius, elements) {
   }
 }
 
-const radius = 265; // Adjust the radius as needed
-const elements = document.getElementsByClassName('circle-element');
-arrangeInCircle(radius, elements);
-// inner and outer elements
+const innerRadius = 265;
+const innerElements = document.getElementsByClassName('circle-element');
+arrangeInCircle(innerRadius, innerElements);
 
 // CONTACT FORM FUNCTIONALITY
 
@@ -442,6 +449,11 @@ const showForm = () => {
     element.classList.add('subject-element-transition');
     element.style.cssText -= 'transition-delay: 0.1s';
   });
+
+  submitBtn.classList.add('submit-btn-transition-show');
+  submitBtn.style.cssText += 'transition-delay: 1.6s';
+  submitBtn.style.cssText += 'transition-duration: 0.5s';
+  adjustSubmitBtnHover();
 
   subjectInput.style.cssText += 'height: 200px';
 };
@@ -469,7 +481,22 @@ const hideForm = () => {
     element.style.cssText += 'transition-delay: 0.1s';
   });
 
+  submitBtn.style.cssText -= 'transition-delay: 1.6s';
+  submitBtn.style.cssText -= 'transition-duration: 0.5s';
+  // adjustSubmitBtnHover();
+
   subjectInput.style.cssText += 'height: 200px';
+};
+
+// The object of this function is to make it so that the transition duration of
+// the hover effect is not the same as during form transition
+const adjustSubmitBtnHover = () => {
+  if (submitBtn.classList.contains('submit-btn-transition-show')) {
+    setTimeout(() => {
+      submitBtn.style.cssText -= 'transition-delay: 1.6s';
+      submitBtn.style.cssText += 'transition-duration: 0.5s';
+    }, 1700);
+  }
 };
 
 // Enforce a delay between animations
