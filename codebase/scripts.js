@@ -10,6 +10,11 @@ const arrowup = document.querySelector('.arrow-up');
 const devInci = document.querySelector('.intro-logo');
 const cornerLogo = document.querySelector('.corner-logo');
 
+// Social media
+
+const githubLink = document.querySelector('.github');
+const linkedinLink = document.querySelector('.linkedin');
+
 // L1 elements
 const doorwayLeft = document.querySelector('.l1-doorway-left');
 const doorwayRight = document.querySelector('.l1-doorway-right');
@@ -56,9 +61,12 @@ const emailElements = document.querySelectorAll('.email-element');
 const subjectElements = document.querySelectorAll('.subject-element');
 const subjectInput = document.querySelector('.form-input-subject');
 const submitBtn = document.querySelector('.submit-btn');
+const submitModal = document.querySelector('.submit-modal');
 
 const handleIntroAnimation = (e) => {
   cornerLogo.classList.add('corner-logo-transition');
+  linkedinLink.classList.add('linkedin-transition');
+  githubLink.classList.add('github-transition');
 };
 
 window.addEventListener('load', handleIntroAnimation);
@@ -397,7 +405,11 @@ const returnToFrontAnimation = () => {
 
   hideForm();
 
-  setTimeout(() => window.location.reload(), 1300);
+  if (submitModal.classList.contains('show-submit-modal')) {
+    setTimeout(() => window.location.reload(), 4500);
+  } else {
+    setTimeout(() => window.location.reload(), 1300);
+  }
 };
 
 // Set L2 tech icons in circle
@@ -421,9 +433,16 @@ function arrangeInCircle(radius, elements) {
   }
 }
 
-const innerRadius = 265;
-const innerElements = document.getElementsByClassName('circle-element');
-arrangeInCircle(innerRadius, innerElements);
+const screenWidth = window.innerWidth;
+let radius = 265;
+if (screenWidth <= 1400) {
+  radius = 265;
+} else if (screenWidth > 1400) {
+  radius = 280;
+}
+
+const elements = document.getElementsByClassName('circle-element');
+arrangeInCircle(radius, elements);
 
 // CONTACT FORM FUNCTIONALITY
 
@@ -498,6 +517,21 @@ const adjustSubmitBtnHover = () => {
     }, 1700);
   }
 };
+
+const showSubmitModal = () => {
+  submitModal.classList.add('show-submit-modal');
+
+  setTimeout(() => {
+    submitModal.classList.remove('show-submit-modal');
+    submitModal.classList.add('hide-submit-modal');
+  }, 4000);
+};
+
+submitBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  showSubmitModal();
+  returnToFrontAnimation();
+});
 
 // Enforce a delay between animations
 let lastScrollTime = 0;
