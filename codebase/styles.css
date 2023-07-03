@@ -55,24 +55,26 @@ body {
 .github:hover {
   cursor: pointer;
   transform: scale(1.1);
+  /* border: 1px solid #ff6f1f; */
+  /* transform: rotate(15deg); */
   transition: all;
-  transition-duration: 1s;
+  transition-duration: 0.5s;
   transition-timing-function: ease;
 }
 
 .linkedin {
-  right: 3vw;
-  bottom: 5vh;
-  background-image: url('../design/images/linkedin-logo-orange.png');
+  right: 4vw;
+  bottom: 4vh;
+  background-image: url('../design/images/linkedin-logo2.png');
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  background-color: black;
+  background-color: #ff6f1f;
 }
 
 .github {
-  right: 6vw;
-  bottom: 5vh;
+  right: 7vw;
+  bottom: 4vh;
   background-image: url('../design/images/github-logo.png');
   background-size: contain;
   background-position: bottom;
@@ -90,29 +92,6 @@ body {
   transition-delay: 3s;
   transition-timing-function: ease;
 }
-
-/* .intro-logo-animation {
-  animation-name: logoAnimation;
-  animation-duration: 2s;
-  animation-timing-function: ease;
-} */
-
-/* Blur effect */
-
-/* .subfigure-left,
-.subfigure-right {
-  filter: blur(1px);
-} */
-
-/* .front-lion-left,
-.front-lion-right {
-  filter: blur(1px);
-}
-
-.l1-doorway-left,
-.l1-doorway-right {
-  filter: blur(2.5px);
-} */
 
 @keyframes logoAnimation {
   0% {
@@ -864,19 +843,25 @@ body {
   border-radius: 10px;
   /* top: 32vh; */
   top: calc(50vh - 126px);
-  left: 50vw;
+  /* left: 50vw; */
+  left: calc(50vw - 173px);
+
   font-size: 1.5rem;
   opacity: 0;
   width: 0;
+  transform: scale(0);
   height: 46px;
+  width: 346px;
+
   text-align: center;
 }
 
 .show-showcase-title {
   opacity: 1;
-  width: 346px;
+  /* width: 346px; */
   /* left: 37vw; */
-  left: calc(50vw - 173px);
+  /* left: calc(50vw - 173px); */
+  transform: scale(1);
   transition: all;
   transition-duration: 0.5s;
   transition-timing-function: ease;
@@ -1172,7 +1157,7 @@ label[for='subject'] {
   z-index: 1400;
   /* width: 400px; */
   width: 0;
-  height: 0;
+  height: 70px;
   padding-inline-start: 10px;
   border-radius: 10px;
   top: 45vh;
@@ -1191,7 +1176,6 @@ label[for='subject'] {
 .show-submit-modal {
   opacity: 1;
   width: 400px;
-  height: 70px;
   left: calc(50vw - 200px);
   transition: all;
   transition-duration: 0.8s;
