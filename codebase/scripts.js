@@ -24,6 +24,8 @@ const subfigureLeft = document.querySelector('.subfigure-left');
 const subfigureRight = document.querySelector('.subfigure-right');
 let introModal = document.querySelector('.intro-modal');
 
+// Set intro modal margin top and bottom accordingly to its height
+
 const l1Elements = [
   doorwayLeft,
   doorwayRight,
