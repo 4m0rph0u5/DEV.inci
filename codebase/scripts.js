@@ -1,3 +1,6 @@
+const viewportWidth = window.innerWidth;
+const viewportHeight = window.innerHeight;
+
 const layer1 = document.querySelector('.layer-1');
 const layer1Part2 = document.querySelector('.layer-1-part2');
 const layer2 = document.querySelector('.layer-2');
@@ -65,13 +68,13 @@ const subjectInput = document.querySelector('.form-input-subject');
 const submitBtn = document.querySelector('.submit-btn');
 const submitModal = document.querySelector('.submit-modal');
 
-const handleIntroAnimation = (e) => {
-  cornerLogo.classList.add('corner-logo-transition');
-  linkedinLink.classList.add('linkedin-transition');
-  githubLink.classList.add('github-transition');
-};
+// const handleIntroAnimation = (e) => {
+//   cornerLogo.classList.add('corner-logo-transition');
+//   linkedinLink.classList.add('linkedin-transition');
+//   githubLink.classList.add('github-transition');
+// };
 
-window.addEventListener('load', handleIntroAnimation);
+// window.addEventListener('load', handleIntroAnimation);
 
 const handleAnimations = (e) => {
   console.log(`handle animations triggered`);
@@ -98,6 +101,8 @@ const handleAnimations = (e) => {
       layer1Animation(e); // default? Call a default function if none of the elements have the "active" class
   }
 };
+
+// L1 ANIMATIONS/TRANSITIONS
 
 const layer1Animation = (e) => {
   const delta = Math.sign(e.deltaY);
@@ -169,7 +174,9 @@ const layer1Part2Animation = (e) => {
   }
 };
 
-// L2 ANIMATIONS
+// L1 RESPONSIVENESS
+
+// L2 ANIMATIONS/TRANSITIONS
 
 const layer2Animation = (e) => {
   const delta = Math.sign(e.deltaY);
@@ -264,6 +271,10 @@ const hideLayer2Content = () => {
     'mission-transition-hide'
   );
 };
+
+// L2 RESPONSIVENESS
+
+// LAYER 3
 
 const layer3Animation = (e) => {
   const delta = Math.sign(e.deltaY);
@@ -414,26 +425,36 @@ const returnToFrontAnimation = () => {
   }
 };
 
+// L3 RESPONSIVENESS
+
+// const l3BackgroundCenterHeight = viewportHeight * 0.7;
+// const l3BackgroundCenterWidth = viewportWidth * 0.7;
+// l3BackgroundCenter.style.height = `${l3BackgroundCenterHeight}px`;
+// l3BackgroundCenter.style.width = `${l3BackgroundCenterWidth}px`;
+// l3BackgroundCenter.style.top = `calc(50vh - ${l3BackgroundCenterHeight}px / 2)`;
+// l3BackgroundCenter.style.left = `calc(50vw - ${l3BackgroundCenterWidth}px / 2)`;
+// myElement.style.transform = 'translate(-50%, -50%)';
+
 // Set L2 tech icons in circle
 
-function arrangeInCircle(radius, elements) {
-  const container = document.getElementById('container');
-  const angle = (2 * Math.PI) / elements.length; // Calculate the angle between each element
-  const containerWidth = container.offsetWidth;
-  const containerHeight = container.offsetHeight;
-  const centerX = containerWidth / 2;
-  const centerY = containerHeight / 2;
+// function arrangeInCircle(radius, elements) {
+//   const container = document.getElementById('container');
+//   const angle = (2 * Math.PI) / elements.length; // Calculate the angle between each element
+//   const containerWidth = container.offsetWidth;
+//   const containerHeight = container.offsetHeight;
+//   const centerX = containerWidth / 2;
+//   const centerY = containerHeight / 2;
 
-  for (let i = 0; i < elements.length; i++) {
-    const element = elements[i];
-    const angleOffset = angle * i;
-    const x = Math.cos(angleOffset) * radius + centerX;
-    const y = Math.sin(angleOffset) * radius + centerY;
+//   for (let i = 0; i < elements.length; i++) {
+//     const element = elements[i];
+//     const angleOffset = angle * i;
+//     const x = Math.cos(angleOffset) * radius + centerX;
+//     const y = Math.sin(angleOffset) * radius + centerY;
 
-    element.style.left = x + 'px';
-    element.style.top = y + 'px';
-  }
-}
+//     element.style.left = x + 'px';
+//     element.style.top = y + 'px';
+//   }
+// }
 
 const screenWidth = window.innerWidth;
 let radius = 265;
@@ -444,7 +465,7 @@ if (screenWidth <= 1400) {
 }
 
 const elements = document.getElementsByClassName('circle-element');
-arrangeInCircle(radius, elements);
+// arrangeInCircle(radius, elements);
 
 // CONTACT FORM FUNCTIONALITY
 
@@ -529,11 +550,11 @@ const showSubmitModal = () => {
   }, 4000);
 };
 
-submitBtn.addEventListener('click', (e) => {
-  e.preventDefault();
-  showSubmitModal();
-  returnToFrontAnimation();
-});
+// submitBtn.addEventListener('click', (e) => {
+//   e.preventDefault();
+//   showSubmitModal();
+//   returnToFrontAnimation();
+// });
 
 // Enforce a delay between animations
 let lastScrollTime = 0;
