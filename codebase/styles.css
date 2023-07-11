@@ -1264,28 +1264,29 @@ label[for='subject'] {
   .l2-center-top-right,
   .l2-center-bottom-left,
   .l2-center-bottom-right {
-    width: 180px;
-    height: 180px;
+    border: 1px solid white;
+    height: 50vh;
+    width: 50vw;
   }
 
   .l2-center-top-left,
   .l2-center-top-right {
-    top: calc(50vh - 160px);
+    top: 25vh;
   }
 
   .l2-center-bottom-left,
   .l2-center-bottom-right {
-    bottom: calc(50vh - 148px);
+    top: vh;
   }
 
   .l2-center-top-left,
   .l2-center-bottom-left {
-    left: calc(50vw - 180px);
+    right: 50vw;
   }
 
   .l2-center-top-right,
   .l2-center-bottom-right {
-    right: calc(50vw - 180px);
+    left: 50vw;
   }
 
   .l2-left-part,
@@ -1355,15 +1356,13 @@ label[for='subject'] {
     width: 84vw;
     left: 8vw;
     top: 10vh;
-    transform: translate(-50% -50%);
   }
 
   .l3-foreground-bottom {
     height: 20vh;
     width: 80vw;
     left: 10vw;
-    bottom: 20vh;
-    transform: translate(-50% -50%);
+    bottom: 25vh;
   }
 
   .l3-background-center {
@@ -1383,17 +1382,7 @@ label[for='subject'] {
   }
 }
 
-@media screen and (min-width: 504px) {
-  /* .l3-foreground-top {
-    left: calc(50vw - 180px);
-  }
-
-  .l3-foreground-bottom {
-    left: calc(50vw - 150px);
-  } */
-}
-
-/* Medium devices */
+/* Medium devices / vertical mobile devices */
 
 @media screen and (min-width: 767px) {
   .scrollup-icon-container,
@@ -1521,10 +1510,10 @@ label[for='subject'] {
   }
 
   .l3-foreground-bottom {
-    height: 200px;
-    width: 400px;
-    left: calc(50vw - 200px);
-    bottom: calc(50vh - 320px);
+    height: 26vh;
+    width: 60vw;
+    left: 20vw;
+    bottom: 17vh;
   }
 
   .l3-background-center {
@@ -1709,14 +1698,14 @@ label[for='subject'] {
   }
 
   .l3-foreground-top {
-    height: 75vh;
-    width: 36vw;
+    height: 80vh;
+    width: 40vw;
     top: 0;
-    left: 32vw;
+    left: 30vw;
   }
 
   .l3-foreground-bottom {
-    height: 40vh;
+    height: 30vh;
     width: 40vw;
     bottom: 10vh;
     left: 30vw;
@@ -1751,7 +1740,21 @@ label[for='subject'] {
 
   /* Layer 3 */
 
+  .l3-background-center {
+    transform: scale(0.8);
+  }
+
+  .l3-foreground-top {
+    height: 76vh;
+    width: 38vw;
+    left: 31vw;
+    top: 0;
+  }
+
   .l3-foreground-bottom {
-    bottom: 10vh;
+    height: 40vh;
+    width: 40vw;
+    bottom: 2vh;
+    left: 30vw;
   }
 }
