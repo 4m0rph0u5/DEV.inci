@@ -274,6 +274,21 @@ const hideLayer2Content = () => {
 
 // L2 RESPONSIVENESS
 
+const l2CenterElements = [
+  l2CenterTopLeft,
+  l2CenterTopRight,
+  l2CenterBottomLeft,
+  l2CenterBottomRight,
+];
+
+// if (window.offsetWidth > '700px' && window.offsetWidth > window.offsetHeight) {
+//   l2CenterElements.forEach((element) => {
+//     element.style.backgroundPosition = 'left';
+//     element.style.border = '1px solid red';
+//     alert(works);
+//   });
+// }
+
 // LAYER 3
 
 const layer3Animation = (e) => {
