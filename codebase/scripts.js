@@ -565,11 +565,11 @@ const showSubmitModal = () => {
   }, 4000);
 };
 
-// submitBtn.addEventListener('click', (e) => {
-//   e.preventDefault();
-//   showSubmitModal();
-//   returnToFrontAnimation();
-// });
+submitBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  showSubmitModal();
+  returnToFrontAnimation();
+});
 
 // Enforce a delay between animations
 let lastScrollTime = 0;
